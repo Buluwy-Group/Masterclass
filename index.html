@@ -96,7 +96,7 @@
           <div class="editor" id="editor">
             <div class="editor-bar">
               <span class="editor-file">primeiro_algoritmo.alg</span>
-              <button class="editor-run" id="runBtn" type="button">Executar</button>
+              <button class="editor-run" id="runBtn" type="submit" form="consoleForm" disabled>Executar</button>
             </div>
 
             <pre class="editor-code" tabindex="0" aria-label="Código de exemplo em Visualg"><code><span class="line"><span class="ln">1</span><span class="k">algoritmo</span> <span class="s">"primeiro_algoritmo"</span></span>
@@ -104,19 +104,27 @@
 <span class="line"><span class="ln">3</span>   nome: <span class="t">caractere</span></span>
 <span class="line"><span class="ln">4</span><span class="k">inicio</span></span>
 <span class="line"><span class="ln">5</span>   <span class="c">// entrada</span></span>
-<span class="line"><span class="ln">6</span>   <span class="k">escreva</span>(<span class="s">"Como te chamas? "</span>)</span>
-<span class="line"><span class="ln">7</span>   <span class="k">leia</span>(nome)</span>
+<span class="line" data-step><span class="ln">6</span>   <span class="k">escreva</span>(<span class="s">"Como te chamas? "</span>)</span>
+<span class="line" data-step><span class="ln">7</span>   <span class="k">leia</span>(nome)</span>
 <span class="line"><span class="ln">8</span>   <span class="c">// saída</span></span>
-<span class="line"><span class="ln">9</span>   <span class="k">escreval</span>(<span class="s">"Olá, "</span>, nome, <span class="s">"!"</span>)</span>
+<span class="line" data-step><span class="ln">9</span>   <span class="k">escreval</span>(<span class="s">"Olá, "</span>, nome, <span class="s">"!"</span>)</span>
 <span class="line"><span class="ln">10</span><span class="k">fimalgoritmo</span></span></code></pre>
 
-            <div class="editor-console" aria-live="polite">
+            <!-- Consola interativa (offline): script.js lê o nome e mostra a saudação, sem enviar nada a lado nenhum.
+                 Sem JavaScript fica um exemplo estático com "Ana". -->
+            <div class="editor-console">
               <p class="console-head">Resultado da execução</p>
-              <p class="console-line">Como te chamas? <span class="typed">Ana</span></p>
-              <p class="console-line">Olá, Ana!</p>
+              <form class="console-prompt" id="consoleForm" novalidate>
+                <label for="nameInput">Como te chamas?</label>
+                <input class="console-input" id="nameInput" name="nome" type="text" value="Ana" maxlength="30"
+                       autocomplete="off" autocapitalize="words" spellcheck="false" enterkeyhint="go"
+                       placeholder="escreve o teu nome" disabled>
+              </form>
+              <p class="console-out" id="consoleOut" aria-live="polite">Olá, <span data-out-name>Ana</span>!</p>
+              <p class="console-hint" id="consoleHint" aria-live="polite"></p>
             </div>
           </div>
-          <figcaption class="editor-caption">O teu primeiro programa: recebe um nome e responde.</figcaption>
+          <figcaption class="editor-caption">Experimenta: escreve o teu nome e executa o programa.</figcaption>
         </figure>
       </div>
 
@@ -425,7 +433,7 @@
           <div><dt>Data</dt><dd>30 de Setembro de 2026</dd></div>
           <div><dt>Horário</dt><dd>14:00 às 17:00 (3 horas)</dd></div>
           <div><dt>Formato</dt><dd>Presencial</dd></div>
-          <div><dt>Local</dt><dd><span class="placeholder">[INSERIR LOCAL]</span></dd></div>
+          <div><dt>Local</dt><dd>Por anunciar</dd></div>
           <div><dt>Ferramenta</dt><dd>Visualg</dd></div>
           <div><dt>Certificado</dt><dd>Sim, de participação</dd></div>
         </dl>
@@ -441,94 +449,16 @@
 
         <header class="signup-intro">
           <h2 id="inscricao-title">Reserva a tua vaga</h2>
-          <p class="section-lead">Preenche os teus dados para pedir a reserva na Masterclass de 30 de Setembro de 2026.</p>
+          <p class="section-lead">O primeiro passo é falar connosco no WhatsApp.</p>
           <p class="signup-note">Tens dúvidas antes de avançar? <a href="#faq">Vê as perguntas frequentes</a>.</p>
         </header>
 
-        <div class="signup-panel">
-          <!--
-            FORMULÁRIO
-            - Mensagens de erro/estado ficam nos atributos data-msg-* (editáveis aqui, sem mexer no JS).
-            - A ligação ao backend faz-se em script.js → CONFIG.REGISTRATION_ENDPOINT.
-          -->
-          <form id="registrationForm" novalidate
-                data-msg-invalid="Verifica os campos assinalados e tenta novamente."
-                data-msg-network="Não foi possível enviar o teu pedido. Verifica a ligação e tenta novamente, ou fala connosco pelo WhatsApp ou Instagram."
-                data-msg-preview="Pré-visualização: as inscrições ainda não estão ligadas a nenhum sistema, por isso nenhum dado foi enviado.">
-
-            <div class="field" data-field="fullName">
-              <label for="fullName">Nome completo</label>
-              <input id="fullName" name="fullName" type="text" autocomplete="name" required
-                     aria-describedby="err-fullName"
-                     data-msg-required="Escreve o teu nome completo."
-                     data-msg-invalid="Escreve o nome e o apelido.">
-              <p class="error" id="err-fullName" aria-live="polite"></p>
-            </div>
-
-            <div class="field" data-field="whatsapp">
-              <label for="whatsapp">WhatsApp</label>
-              <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required
-                     placeholder="+258 8X XXX XXXX"
-                     aria-describedby="err-whatsapp"
-                     data-msg-required="Indica o teu número de WhatsApp."
-                     data-msg-invalid="Usa apenas números (8 a 15 dígitos), por exemplo +258 8X XXX XXXX.">
-              <p class="error" id="err-whatsapp" aria-live="polite"></p>
-            </div>
-
-            <div class="field" data-field="email">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required
-                     aria-describedby="err-email"
-                     data-msg-required="Indica o teu email."
-                     data-msg-invalid="Este email não parece válido. Confirma se está bem escrito.">
-              <p class="error" id="err-email" aria-live="polite"></p>
-            </div>
-
-            <fieldset class="field field--choice" data-field="hasComputer" aria-describedby="err-hasComputer">
-              <legend>Tem computador?</legend>
-              <div class="choice-group">
-                <label class="choice"><input type="radio" name="hasComputer" value="sim" required><span>Sim</span></label>
-                <label class="choice"><input type="radio" name="hasComputer" value="nao"><span>Não</span></label>
-              </div>
-              <p class="error" id="err-hasComputer" aria-live="polite" data-msg-required="Indica se tens computador."></p>
-            </fieldset>
-
-            <div class="field" data-field="source">
-              <label for="source">Como conheceu a Masterclass? <span class="optional">(opcional)</span></label>
-              <select id="source" name="source">
-                <option value="">Seleciona uma opção</option>
-                <option value="Instagram">Instagram</option>
-                <option value="WhatsApp">WhatsApp</option>
-                <option value="Amigo ou colega">Indicação de um amigo ou colega</option>
-                <option value="Outro">Outro</option>
-              </select>
-            </div>
-
-            <!-- Campo-armadilha anti-spam: deve ficar vazio -->
-            <div class="hp" aria-hidden="true">
-              <label>Não preencher <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-            </div>
-
-            <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
-
-            <button class="btn btn-primary btn-lg btn-block" type="submit" id="submitBtn">
-              <span class="btn-label">Quero reservar minha vaga</span>
-              <span class="btn-loading" aria-hidden="true"></span>
-            </button>
-          </form>
-
-          <!-- Estado de sucesso (mostrado por script.js após envio) -->
-          <div class="form-success" id="formSuccess" tabindex="-1" hidden>
-            <div data-mode="endpoint" hidden>
-              <h3>Recebemos o teu pedido de reserva, <span data-fill="firstName"></span>.</h3>
-              <p>Se precisares de ajuda, fala connosco pelo WhatsApp ou pelo Instagram.</p>
-            </div>
-            <div data-mode="whatsapp" hidden>
-              <h3>Falta só um passo, <span data-fill="firstName"></span>.</h3>
-              <p>Abrimos o WhatsApp com os teus dados preenchidos. Envia a mensagem para concluir o pedido de reserva.</p>
-              <a class="btn btn-ghost" data-whatsapp-open href="#inscricao" target="_blank" rel="noopener">Abrir o WhatsApp novamente</a>
-            </div>
-          </div>
+        <!-- Card de WhatsApp: o link vive aqui no HTML (data-whatsapp-link). script.js só acrescenta a mensagem pré-escrita (CONFIG.WHATSAPP_MESSAGE). -->
+        <div class="signup-panel wa-card">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.3 18.8z"/><path d="M9 10h6M9 13.5h4"/></svg>
+          <h3>Conversa connosco no WhatsApp</h3>
+          <p class="wa-text">Recebe mais detalhes sobre o evento e faz parte do grupo.</p>
+          <a class="btn btn-primary btn-lg btn-block" href="https://wa.me/258876055557" target="_blank" rel="noopener" data-whatsapp-link>Conversar no WhatsApp<span class="sr-only"> (abre noutra janela)</span></a>
         </div>
 
       </div>
@@ -588,16 +518,15 @@
 
         <ul class="contact-list">
           <li>
-            <!-- O número é preenchido por script.js → CONFIG.WHATSAPP_NUMBER -->
-            <a class="contact-tile" href="#contacto" data-whatsapp-link aria-disabled="true">
+            <a class="contact-tile" href="https://wa.me/258876055557" target="_blank" rel="noopener" data-whatsapp-link>
               <span class="contact-label">WhatsApp</span>
-              <span class="contact-value" data-whatsapp-text><span class="placeholder">[INSERIR CONTACTO OFICIAL]</span></span>
+              <span class="contact-value">Conversar no WhatsApp<span class="sr-only"> (abre noutra janela)</span></span>
             </a>
           </li>
           <li>
-            <a class="contact-tile" href="https://www.instagram.com/buluwy_official" target="_blank" rel="noopener">
+            <a class="contact-tile" href="https://www.instagram.com/buluwy__official?stkn=M212d2RvMm91Zjhw" target="_blank" rel="noopener">
               <span class="contact-label">Instagram</span>
-              <span class="contact-value">@buluwy_official</span>
+              <span class="contact-value">@buluwy__official<span class="sr-only"> (abre noutra janela)</span></span>
             </a>
           </li>
         </ul>
