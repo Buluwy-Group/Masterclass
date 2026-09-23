@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ===== SEO ===== -->
+  <title>Masterclass de Lógica de Programação | Buluwy Academy</title>
+  <meta name="description" content="Aprende lógica de programação do zero e cria o teu primeiro algoritmo na Masterclass da Buluwy Academy, presencial ou online, em 3 de Outubro de 2026.">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Buluwy Academy">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:title" content="Masterclass de Lógica de Programação | Buluwy Academy">
+  <meta property="og:description" content="Aprende lógica de programação do zero e cria o teu primeiro algoritmo na Masterclass da Buluwy Academy, presencial ou online, em 3 de Outubro de 2026.">
+  <!-- TODO (quando o site estiver online e houver imagem de partilha 1200x630):
+  <meta property="og:url" content="https://O-TEU-DOMINIO/">
+  <meta property="og:image" content="https://O-TEU-DOMINIO/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  -->
+  <meta name="twitter:card" content="summary">
+
+  <!-- ===== Tipografia (Google Fonts) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Marca o documento como "com JavaScript" antes de pintar (evita saltos visuais) -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body id="topo">
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#topo" aria-label="Buluwy Academy, voltar ao topo">
+        <span class="brand-name">BULUWY</span>
+        <span class="brand-sub">ACADEMY</span>
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="#para-quem">Para quem</a></li>
+          <li><a href="#conteudo-programatico">Conteúdo</a></li>
+          <li><a href="#programa">Programa</a></li>
+          <li><a href="#formador">Formador</a></li>
+          <li><a href="#incluido">Incluído</a></li>
+          <li><a href="#faq">Perguntas</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm" href="#inscricao" aria-label="Reservar vaga">Reservar<span class="btn-extra"> vaga</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+
+    <!-- =====================================================
+         1. HERO
+         ===================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">Lógica de Programação: Do Zero ao Primeiro Algoritmo</p>
+          <h1 id="hero-title">Aprende a pensar como um programador.</h1>
+          <p class="hero-sub">Em 3 horas, aprende os fundamentos da lógica de programação e cria o teu primeiro algoritmo, mesmo sem experiência prévia.</p>
+
+          <div class="hero-actions" id="heroActions">
+            <a class="btn btn-primary btn-lg" href="#inscricao">Reservar minha vaga</a>
+            <a class="btn btn-ghost btn-lg" href="#programa">Ver programa</a>
+          </div>
+
+          <p class="seats"><span class="seats-dot" aria-hidden="true"></span>Vagas limitadas na modalidade presencial</p>
+
+
+        </div>
+
+        <!-- Editor Visualg: demonstra o "primeiro algoritmo" (animação controlada em script.js) -->
+        <figure class="hero-visual">
+          <div class="editor" id="editor">
+            <div class="editor-bar">
+              <span class="editor-file">primeiro_algoritmo.alg</span>
+              <button class="editor-run" id="runBtn" type="submit" form="consoleForm" disabled>Executar</button>
+            </div>
+
+            <pre class="editor-code" tabindex="0" aria-label="Código de exemplo em Visualg"><code><span class="line"><span class="ln">1</span><span class="k">algoritmo</span> <span class="s">"primeiro_algoritmo"</span></span>
+<span class="line"><span class="ln">2</span><span class="k">var</span></span>
+<span class="line"><span class="ln">3</span>   nome: <span class="t">caractere</span></span>
+<span class="line"><span class="ln">4</span><span class="k">inicio</span></span>
+<span class="line"><span class="ln">5</span>   <span class="c">// entrada</span></span>
+<span class="line" data-step><span class="ln">6</span>   <span class="k">escreva</span>(<span class="s">"Como te chamas? "</span>)</span>
+<span class="line" data-step><span class="ln">7</span>   <span class="k">leia</span>(nome)</span>
+<span class="line"><span class="ln">8</span>   <span class="c">// saída</span></span>
+<span class="line" data-step><span class="ln">9</span>   <span class="k">escreval</span>(<span class="s">"Olá, "</span>, nome, <span class="s">"!"</span>)</span>
+<span class="line"><span class="ln">10</span><span class="k">fimalgoritmo</span></span></code></pre>
+
+            <!-- Consola interativa (offline): script.js lê o nome e mostra a saudação, sem enviar nada a lado nenhum.
+                 Sem JavaScript fica um exemplo estático com "Ana". -->
+            <div class="editor-console">
+              <p class="console-head">Resultado da execução</p>
+              <form class="console-prompt" id="consoleForm" novalidate>
+                <label for="nameInput">Como te chamas?</label>
+                <input class="console-input" id="nameInput" name="nome" type="text" value="Ana" maxlength="30"
+                       autocomplete="off" autocapitalize="words" spellcheck="false" enterkeyhint="go"
+                       placeholder="escreve o teu nome" disabled>
+              </form>
+              <p class="console-out" id="consoleOut" aria-live="polite">Olá, <span data-out-name>Ana</span>!</p>
+              <p class="console-hint" id="consoleHint" aria-live="polite"></p>
+            </div>
+          </div>
+          <figcaption class="editor-caption">Experimenta: escreve o teu nome e executa o programa.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Faixa de dados do evento (largura total) -->
+      <div class="container hero-strip">
+        <dl class="hero-facts">
+          <div class="fact">
+            <dt>Data (sábado)</dt>
+            <dd>3 Outubro 2026</dd>
+          </div>
+          <div class="fact">
+            <dt>Presencial</dt>
+            <dd>500 MZN</dd>
+          </div>
+          <div class="fact">
+            <dt>Online, via Google Meet</dt>
+            <dd>300 MZN</dd>
+          </div>
+        </dl>
+
+        <!-- Contagem decrescente: só aparece com JS e enquanto a data não passou (ver script.js → CONFIG.EVENT_START) -->
+        <p class="countdown" id="countdown" hidden>
+          Faltam
+          <span data-cd="days-part"><strong data-cd="days">0</strong> <span data-cd="days-label">dias</span>,</span>
+          <strong data-cd="hours">00</strong> h e
+          <strong data-cd="minutes">00</strong> min para o início.
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         2. PROBLEMA → OPORTUNIDADE: "Esta masterclass é para ti?"
+         ===================================================== -->
+    <section class="section" id="para-quem" aria-labelledby="para-quem-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="para-quem-title">Esta masterclass é para ti?</h2>
+          <p class="section-lead">Se alguma destas frases descreve a tua situação, esta masterclass foi pensada para ti.</p>
+        </header>
+
+        <ul class="fit-grid">
+          <li class="fit-card fit-card--half">Nunca programaste.</li>
+          <li class="fit-card fit-card--half">Queres entrar na área de tecnologia.</li>
+          <li class="fit-card fit-card--third">Estudas informática.</li>
+          <li class="fit-card fit-card--third">Já tentaste programação e tiveste dificuldades.</li>
+          <li class="fit-card fit-card--third">Queres aprender lógica antes de avançar para linguagens de programação.</li>
+        </ul>
+
+        <div class="no-exp">
+          <p class="no-exp-text">Não precisas de experiência prévia.</p>
+          <a class="btn btn-primary" href="#inscricao">Reservar minha vaga</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         3. O QUE VAIS APRENDER
+         ===================================================== -->
+    <section class="section section--raised" id="conteudo-programatico" aria-labelledby="aprender-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="aprender-title">O que vais aprender</h2>
+          <p class="section-lead">Dez passos, do primeiro conceito ao desafio final.</p>
+        </header>
+
+        <ol class="topic-grid">
+          <li class="topic">
+            <span class="topic-n">1</span>
+            <h3>O que é programação</h3>
+            <p>Como damos instruções a um computador.</p>
+          </li>
+          <li class="topic">
+            <span class="topic-n">2</span>
+            <h3>Algoritmos</h3>
+            <p>Sequências de passos para resolver problemas.</p>
+          </li>
+          <li class="topic">
+            <span class="topic-n">3</span>
+            <h3>Entrada, processamento e saída</h3>
+            <p>Como um programa recebe, trabalha e devolve dados.</p>
+          </li>
+          <li class="topic">
+            <span class="topic-n">4</span>
+            <h3>Variáveis</h3>
+            <p>Onde o programa guarda informação.</p>
+          </li>
+          <li class="topic">
+            <span class="topic-n">5</span>
+            <h3>Tipos de dados</h3>
+            <p>Números, texto e valores lógicos.</p>
+          </li>
+          <li class="topic">
+            <span class="topic-n">6</span>
+            <h3>Operadores</h3>
+            <p>Fazer cálculos e comparações.</p>
+          </li>
+          <li class="topic">
+            <span class="topic-n">7</span>
+            <h3>Visualg</h3>
+            <p>A ferramenta onde escrevemos e executamos.</p>
+          </li>
+          <li class="topic">
+            <span class="topic-n">8</span>
+            <h3>Primeiro programa</h3>
+            <p>Do papel ao programa a funcionar.</p>
+          </li>
+          <li class="topic">
+            <span class="topic-n">9</span>
+            <h3>Exercícios práticos</h3>
+            <p>Praticar cada conceito com problemas reais.</p>
+          </li>
+          <li class="topic">
+            <span class="topic-n">10</span>
+            <h3>Desafio final</h3>
+            <p>Juntar tudo numa pequena solução.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         4. EXPERIÊNCIA PRÁTICA
+         ===================================================== -->
+    <section class="section" id="experiencia" aria-labelledby="pratica-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="pratica-title">Não vais apenas assistir.</h2>
+          <p class="section-lead">Durante a Masterclass vais resolver problemas, escrever algoritmos, executar programas no Visualg e construir uma pequena solução prática.</p>
+        </header>
+
+        <ol class="pipeline" aria-label="Como vamos trabalhar">
+          <li class="pipe-step">
+            <span class="pipe-node" aria-hidden="true">1</span>
+            <h3>PROBLEMA</h3>
+            <p>Perceber o que precisa de ser resolvido.</p>
+          </li>
+          <li class="pipe-step">
+            <span class="pipe-node" aria-hidden="true">2</span>
+            <h3>LÓGICA</h3>
+            <p>Pensar nos passos, antes de escrever.</p>
+          </li>
+          <li class="pipe-step">
+            <span class="pipe-node" aria-hidden="true">3</span>
+            <h3>ALGORITMO</h3>
+            <p>Escrever a sequência de instruções.</p>
+          </li>
+          <li class="pipe-step">
+            <span class="pipe-node" aria-hidden="true">4</span>
+            <h3>PROGRAMA</h3>
+            <p>Executar a solução no Visualg.</p>
+          </li>
+          <li class="pipe-step">
+            <span class="pipe-node" aria-hidden="true">5</span>
+            <h3>RESULTADO</h3>
+            <p>Ver a tua solução a funcionar.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         5. PROGRAMA (timeline)
+         ===================================================== -->
+    <section class="section section--raised" id="programa" aria-labelledby="programa-title">
+      <div class="container programa-grid">
+        <header class="section-head programa-head">
+          <h2 id="programa-title">Programa da masterclass</h2>
+          <p class="section-lead">Sábado, 3 de Outubro de 2026, das 10:00 às 13:00, com 15 minutos de networking no final.</p>
+          <a class="btn btn-primary programa-cta" href="#inscricao">Reservar minha vaga</a>
+        </header>
+
+        <ol class="timeline">
+          <li class="tl-item"><time class="tl-time" datetime="10:00">10:00</time><span class="tl-title">Recepção e abertura</span></li>
+          <li class="tl-item"><time class="tl-time" datetime="10:10">10:10</time><span class="tl-title">O que é programação?</span></li>
+          <li class="tl-item"><time class="tl-time" datetime="10:25">10:25</time><span class="tl-title">Algoritmos</span></li>
+          <li class="tl-item"><time class="tl-time" datetime="10:45">10:45</time><span class="tl-title">Entrada, processamento e saída</span></li>
+          <li class="tl-item"><time class="tl-time" datetime="11:05">11:05</time><span class="tl-title">Variáveis</span></li>
+          <li class="tl-item tl-break"><time class="tl-time" datetime="11:20">11:20</time><span class="tl-title">Intervalo</span></li>
+          <li class="tl-item"><time class="tl-time" datetime="11:30">11:30</time><span class="tl-title">Introdução ao Visualg</span></li>
+          <li class="tl-item"><time class="tl-time" datetime="11:40">11:40</time><span class="tl-title">Primeiro programa</span></li>
+          <li class="tl-item"><time class="tl-time" datetime="11:50">11:50</time><span class="tl-title">Entrada de dados</span></li>
+          <li class="tl-item"><time class="tl-time" datetime="12:05">12:05</time><span class="tl-title">Operadores</span></li>
+          <li class="tl-item tl-key"><time class="tl-time" datetime="12:20">12:20</time><span class="tl-title">Desafio principal</span></li>
+          <li class="tl-item"><time class="tl-time" datetime="12:45">12:45</time><span class="tl-title">Correção coletiva</span></li>
+          <li class="tl-item"><time class="tl-time" datetime="12:55">12:55</time><span class="tl-title">Encerramento</span></li>
+          <li class="tl-item"><time class="tl-time" datetime="13:00">13:00</time><span class="tl-title">Networking (15 minutos)</span></li>
+          <li class="tl-item tl-end"><time class="tl-time" datetime="13:15">13:15</time><span class="tl-title">Fim</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         6. DESAFIO FINAL
+         ===================================================== -->
+    <section class="section" id="desafio" aria-labelledby="desafio-title">
+      <div class="container">
+        <div class="challenge">
+          <h2 id="desafio-title">DESAFIO FINAL</h2>
+          <p class="challenge-text">Cria um programa que recebe três notas, calcula a média e informa se o estudante foi aprovado ou reprovado.</p>
+
+          <ol class="levels">
+            <li class="level">
+              <span class="level-tag">NÍVEL 1</span>
+              <span class="level-meter" aria-hidden="true"><i class="on"></i><i></i><i></i></span>
+              <p>Calcular a média.</p>
+            </li>
+            <li class="level">
+              <span class="level-tag">NÍVEL 2</span>
+              <span class="level-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>
+              <p>Adicionar aprovação/reprovação.</p>
+            </li>
+            <li class="level">
+              <span class="level-tag">NÍVEL 3</span>
+              <span class="level-meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>
+              <p>Classificar o resultado.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         7. BULUWY ACADEMY + FORMADOR
+         ===================================================== -->
+    <section class="section section--raised" id="formador" aria-labelledby="academy-title">
+      <div class="container about-grid">
+
+        <div class="about-academy">
+          <p class="about-brand">BULUWY ACADEMY</p>
+          <h2 id="academy-title">Transformar iniciantes em pessoas capazes de criar soluções.</h2>
+          <p class="section-lead">A Buluwy Academy nasceu com uma missão simples: tornar a aprendizagem tecnológica mais prática, acessível e orientada para resultados.</p>
+        </div>
+
+        <article class="teacher" aria-labelledby="teacher-title">
+          <h2 id="teacher-title" class="teacher-heading">QUEM VAI MINISTRAR?</h2>
+          <div class="teacher-card">
+            <!-- Para usar uma fotografia: substituir o bloco .avatar por
+                 <img class="avatar-img" src="assets/paulo-lazaro.jpg" alt="Paulo D. Lázaro"> -->
+            <div class="avatar" aria-hidden="true">PL</div>
+            <div>
+              <h3>Paulo D. Lázaro</h3>
+              <p class="teacher-role">Formador</p>
+              <p class="teacher-bio">Profissional com experiência em tecnologia, informática, design, marketing e formação, focado em transformar conceitos complexos em aprendizagem prática.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         8. O QUE ESTÁ INCLUÍDO
+         ===================================================== -->
+    <section class="section" id="incluido" aria-labelledby="incluido-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="incluido-title">O que está incluído</h2>
+        </header>
+
+        <ul class="include-grid">
+          <li class="include">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <h3>3 horas de formação, presencial ou online</h3>
+          </li>
+          <li class="include">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h6"/></svg>
+            <h3>Material didático digital</h3>
+          </li>
+          <li class="include">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg>
+            <h3>Exercícios práticos</h3>
+          </li>
+          <li class="include">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4M13 6l-2 12"/></svg>
+            <h3>Ficheiros Visualg utilizados na aula</h3>
+          </li>
+          <li class="include">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L8 21l4-2 4 2-1-7.5"/></svg>
+            <h3>Certificado de participação</h3>
+          </li>
+          <li class="include">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><circle cx="17" cy="8" r="2.5"/><path d="M16 14.5c3 0 5 1.5 5 4.5"/></svg>
+            <h3>Acesso ao grupo da turma</h3>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         9. PREÇO
+         ===================================================== -->
+    <section class="section section--raised" id="preco" aria-labelledby="preco-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="preco-title">Começa hoje.</h2>
+          <p class="section-lead">Escolhe como queres participar.</p>
+        </header>
+
+        <!-- Duas modalidades. Cada botão abre o WhatsApp com uma mensagem própria (data-whatsapp-message). -->
+        <div class="plans">
+          <article class="plan" aria-labelledby="plan-presencial">
+            <h3 id="plan-presencial">Presencial</h3>
+            <p class="plan-price" aria-label="500 meticais">500 <span>MZN</span></p>
+            <p class="plan-text">Inscrição para a Masterclass Presencial.</p>
+            <dl class="spec plan-meta">
+              <div><dt>Local</dt><dd>Por anunciar</dd></div>
+              <div><dt>Vagas</dt><dd>Limitadas</dd></div>
+            </dl>
+            <a class="btn btn-primary btn-lg btn-block" href="https://wa.me/258876055557" target="_blank" rel="noopener" data-whatsapp-link
+               data-whatsapp-message="Olá! Quero mais detalhes sobre a Masterclass de Lógica de Programação (3 de Outubro de 2026), na modalidade presencial, e fazer parte do grupo.">Reservar vaga presencial<span class="sr-only"> (abre noutra janela)</span></a>
+          </article>
+
+          <article class="plan" aria-labelledby="plan-online">
+            <h3 id="plan-online">Online</h3>
+            <p class="plan-price" aria-label="300 meticais">300 <span>MZN</span></p>
+            <p class="plan-text">Inscrição para a Masterclass Online.</p>
+            <dl class="spec plan-meta">
+              <div><dt>Plataforma</dt><dd>Google Meet</dd></div>
+              <div><dt>Formato</dt><dd>Live, em direto</dd></div>
+            </dl>
+            <a class="btn btn-primary btn-lg btn-block" href="https://wa.me/258876055557" target="_blank" rel="noopener" data-whatsapp-link
+               data-whatsapp-message="Olá! Quero mais detalhes sobre a Masterclass de Lógica de Programação (3 de Outubro de 2026), na modalidade online (Google Meet), e fazer parte do grupo.">Reservar vaga online<span class="sr-only"> (abre noutra janela)</span></a>
+          </article>
+        </div>
+
+        <!-- Ficha comum às duas modalidades: só dados fornecidos -->
+        <dl class="spec spec--row">
+          <div><dt>Data</dt><dd>Sábado, 3 de Outubro de 2026</dd></div>
+          <div><dt>Horário</dt><dd>10:00 às 13:00 (3 horas), mais 15 min de networking</dd></div>
+          <div><dt>Ferramenta</dt><dd>Visualg</dd></div>
+          <div><dt>Certificado</dt><dd>Sim, de participação</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         10. INSCRIÇÃO
+         ===================================================== -->
+    <section class="section" id="inscricao" aria-labelledby="inscricao-title">
+      <div class="container signup-grid">
+
+        <header class="signup-intro">
+          <h2 id="inscricao-title">Reserva a tua vaga</h2>
+          <p class="section-lead">O primeiro passo é falar connosco no WhatsApp.</p>
+          <p class="signup-note">Tens dúvidas antes de avançar? <a href="#faq">Vê as perguntas frequentes</a>.</p>
+        </header>
+
+        <!-- Card de WhatsApp: os links vivem aqui no HTML (data-whatsapp-link). script.js só acrescenta a mensagem pré-escrita (data-whatsapp-message, ou CONFIG.WHATSAPP_MESSAGE por defeito). -->
+        <div class="signup-panel wa-card">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.3 18.8z"/><path d="M9 10h6M9 13.5h4"/></svg>
+          <h3>Conversa connosco no WhatsApp</h3>
+          <p class="wa-text">Recebe mais detalhes sobre o evento e faz parte do grupo.</p>
+          <p class="wa-choose">Conversar no WhatsApp sobre a modalidade:</p>
+          <div class="wa-actions">
+            <a class="btn btn-primary btn-lg" href="https://wa.me/258876055557" target="_blank" rel="noopener" data-whatsapp-link
+               data-whatsapp-message="Olá! Quero mais detalhes sobre a Masterclass de Lógica de Programação (3 de Outubro de 2026), na modalidade presencial, e fazer parte do grupo.">Presencial<span class="sr-only">, conversar no WhatsApp (abre noutra janela)</span></a>
+            <a class="btn btn-primary btn-lg" href="https://wa.me/258876055557" target="_blank" rel="noopener" data-whatsapp-link
+               data-whatsapp-message="Olá! Quero mais detalhes sobre a Masterclass de Lógica de Programação (3 de Outubro de 2026), na modalidade online (Google Meet), e fazer parte do grupo.">Online<span class="sr-only">, conversar no WhatsApp (abre noutra janela)</span></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         11. FAQ
+         ===================================================== -->
+    <section class="section section--raised" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <header class="section-head">
+          <h2 id="faq-title">Perguntas frequentes</h2>
+        </header>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q-1" aria-expanded="false" aria-controls="faq-a-1">Preciso saber programação?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-panel" id="faq-a-1" role="region" aria-labelledby="faq-q-1"><div class="faq-panel-inner"><p>Não. A Masterclass foi criada para iniciantes.</p></div></div>
+          </div>
+
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2">Preciso levar computador?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-panel" id="faq-a-2" role="region" aria-labelledby="faq-q-2"><div class="faq-panel-inner"><p>Recomenda-se levar computador para acompanhar os exercícios práticos (ou tê-lo à mão, se participares online).</p></div></div>
+          </div>
+
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q-7" aria-expanded="false" aria-controls="faq-a-7">Como funciona a modalidade online?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-panel" id="faq-a-7" role="region" aria-labelledby="faq-q-7"><div class="faq-panel-inner"><p>É uma live através do Google Meet, com taxa de 300 MZN. A modalidade presencial mantém-se a 500 MZN.</p></div></div>
+          </div>
+
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3">Qual ferramenta será utilizada?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-panel" id="faq-a-3" role="region" aria-labelledby="faq-q-3"><div class="faq-panel-inner"><p>Visualg.</p></div></div>
+          </div>
+
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4">Receberei certificado?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-panel" id="faq-a-4" role="region" aria-labelledby="faq-q-4"><div class="faq-panel-inner"><p>Sim, será disponibilizado certificado de participação.</p></div></div>
+          </div>
+
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5">Receberei material?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-panel" id="faq-a-5" role="region" aria-labelledby="faq-q-5"><div class="faq-panel-inner"><p>Sim. Os participantes receberão material didático e exercícios.</p></div></div>
+          </div>
+
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q-6" aria-expanded="false" aria-controls="faq-a-6">A Masterclass é o curso completo?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-panel" id="faq-a-6" role="region" aria-labelledby="faq-q-6"><div class="faq-panel-inner"><p>Não. É uma experiência introdutória e prática. O curso completo de Lógica de Programação estará disponível posteriormente na plataforma da Buluwy Academy.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         12. CONTACTO
+         ===================================================== -->
+    <section class="section" id="contacto" aria-labelledby="contacto-title">
+      <div class="container contact-grid">
+        <header class="section-head">
+          <h2 id="contacto-title">Fala connosco</h2>
+        </header>
+
+        <ul class="contact-list">
+          <li>
+            <a class="contact-tile" href="https://wa.me/258876055557" target="_blank" rel="noopener" data-whatsapp-link>
+              <span class="contact-label">WhatsApp</span>
+              <span class="contact-value">Conversar no WhatsApp<span class="sr-only"> (abre noutra janela)</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="contact-tile" href="https://www.instagram.com/buluwy__official?stkn=M212d2RvMm91Zjhw" target="_blank" rel="noopener">
+              <span class="contact-label">Instagram</span>
+              <span class="contact-value">@buluwy__official<span class="sr-only"> (abre noutra janela)</span></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">BULUWY ACADEMY</p>
+        <p class="footer-tag">Lógica de Programação — Do Zero ao Primeiro Algoritmo</p>
+      </div>
+      <div class="footer-meta">
+        <p>Sábado, 3 de Outubro de 2026</p>
+        <p>Maputo, Moçambique</p>
+      </div>
+    </div>
+    <div class="container footer-legal">
+      <p>© 2026 Buluwy Academy. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- CTA fixo em ecrãs pequenos (aparece depois do hero e some quando o formulário está visível) -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-info">
+      <strong>Desde 300 MZN</strong>
+      <span>Online ou presencial</span>
+    </div>
+    <a class="btn btn-primary" href="#inscricao">Reservar minha vaga</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
